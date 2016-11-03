@@ -1,0 +1,17 @@
+hub:
+  image: selenium/hub
+  ports:
+    - "4444:4444"
+chrome:
+  image: selenium/node-chrome-debug
+  links:
+    - hub
+  ports:
+    - "5901:5900"
+php:
+  build: ./docker/php/
+  volumes:
+    - ./:/app
+  links:
+    - hub:selenium
+  command: tail -f /dev/null

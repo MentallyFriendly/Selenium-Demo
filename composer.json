@@ -1,0 +1,6 @@
+{
+    "require": {
+        "phpunit/phpunit": "^5.5",
+        "phpunit/phpunit-selenium": "^3.0"
+    }
+}
